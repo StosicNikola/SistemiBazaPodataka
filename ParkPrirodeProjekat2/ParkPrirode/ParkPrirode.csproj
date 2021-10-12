@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FED488AA-0E2F-44DE-91ED-0FBCE1350D0E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ParkPrirode</RootNamespace>
+    <AssemblyName>ParkPrirode</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr3.Runtime.3.5.1\lib\net40-client\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate, Version=3.1.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentNHibernate.3.1.0\lib\net461\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.4\lib\net461\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=5.3.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.5.3.3\lib\net461\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.19.11.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remotion.Linq.2.2.0\lib\net45\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq.EagerFetching, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remotion.Linq.EagerFetching.2.2.0\lib\net45\Remotion.Linq.EagerFetching.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataLayer.cs" />
+    <Compile Include="DTOs.cs" />
+    <Compile Include="DTOManager.cs" />
+    <Compile Include="Entiteti\Biljka.cs" />
+    <Compile Include="Entiteti\Hraniliste.cs" />
+    <Compile Include="Entiteti\LokalniNazivBiljke.cs" />
+    <Compile Include="Entiteti\LokalniNazivBiljkeId.cs" />
+    <Compile Include="Entiteti\NazivSelaOblast.cs" />
+    <Compile Include="Entiteti\NazivSelaOblastId.cs" />
+    <Compile Include="Entiteti\Oblast.cs" />
+    <Compile Include="Entiteti\PrimecenaJeId.cs" />
+    <Compile Include="Entiteti\Primecena_je.cs" />
+    <Compile Include="Entiteti\PticeSeliceZivotinjeId.cs" />
+    <Compile Include="Entiteti\PticeSeliceZivotinje.cs" />
+    <Compile Include="Entiteti\Radnik.cs" />
+    <Compile Include="Entiteti\Zivotinja.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\BiljkaForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\BiljkaForm1.Designer.cs">
+      <DependentUpon>BiljkaForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodajHranilisteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajHranilisteForm.Designer.cs">
+      <DependentUpon>DodajHranilisteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodajLokalniNazivBiljkeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajLokalniNazivBiljkeForm.Designer.cs">
+      <DependentUpon>DodajLokalniNazivBiljkeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodajOblastForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajOblastForm.Designer.cs">
+      <DependentUpon>DodajOblastForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodajPrimecenuZivotinjuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajPrimecenuZivotinjuForm.Designer.cs">
+      <DependentUpon>DodajPrimecenuZivotinjuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodajRadnikaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajRadnikaForm.Designer.cs">
+      <DependentUpon>DodajRadnikaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodajSeloForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajSeloForm.Designer.cs">
+      <DependentUpon>DodajSeloForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodajZemljuForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajZemljuForm1.Designer.cs">
+      <DependentUpon>DodajZemljuForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodajZivotinjuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajZivotinjuForm.Designer.cs">
+      <DependentUpon>DodajZivotinjuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodavanjeBiljkeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodavanjeBiljkeForm.Designer.cs">
+      <DependentUpon>DodavanjeBiljkeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\HranilistaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\HranilistaForm.Designer.cs">
+      <DependentUpon>HranilistaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\IzmeniBiljkuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\IzmeniBiljkuForm.Designer.cs">
+      <DependentUpon>IzmeniBiljkuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\IzmeniDatumForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\IzmeniDatumForm.Designer.cs">
+      <DependentUpon>IzmeniDatumForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\IzmeniHranilisteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\IzmeniHranilisteForm.Designer.cs">
+      <DependentUpon>IzmeniHranilisteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\IzmeniLokalniNazivBiljkeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\IzmeniLokalniNazivBiljkeForm.Designer.cs">
+      <DependentUpon>IzmeniLokalniNazivBiljkeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\IzmeniOblastForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\IzmeniOblastForm.Designer.cs">
+      <DependentUpon>IzmeniOblastForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\IzmeniRadnikaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\IzmeniRadnikaForm.Designer.cs">
+      <DependentUpon>IzmeniRadnikaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\IzmeniZivotinjuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\IzmeniZivotinjuForm.Designer.cs">
+      <DependentUpon>IzmeniZivotinjuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\NaziviSelaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\NaziviSelaForm.Designer.cs">
+      <DependentUpon>NaziviSelaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\OblastForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\OblastForm1.Designer.cs">
+      <DependentUpon>OblastForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\PrimecenaJeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\PrimecenaJeForm.Designer.cs">
+      <DependentUpon>PrimecenaJeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\RadniciOblastiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\RadniciOblastiForm.Designer.cs">
+      <DependentUpon>RadniciOblastiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\RadnikForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\RadnikForm.Designer.cs">
+      <DependentUpon>RadnikForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\ZasticeneBiljkeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\ZasticeneBiljkeForm.Designer.cs">
+      <DependentUpon>ZasticeneBiljkeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\ZatitiBiljkuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\ZatitiBiljkuForm.Designer.cs">
+      <DependentUpon>ZatitiBiljkuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\ZemljePticeSelice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\ZemljePticeSelice.Designer.cs">
+      <DependentUpon>ZemljePticeSelice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\ZivotinjeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\ZivotinjeForm.Designer.cs">
+      <DependentUpon>ZivotinjeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mapiranje\BiljkaMapiranja.cs" />
+    <Compile Include="Mapiranje\HranilisteMapiranja.cs" />
+    <Compile Include="Mapiranje\LokalniNazivBiljkeMapiranja.cs" />
+    <Compile Include="Mapiranje\NazivSelaOblastMapiranja.cs" />
+    <Compile Include="Mapiranje\OblastMapiranja.cs" />
+    <Compile Include="Mapiranje\Primecena_jeMapiranja.cs" />
+    <Compile Include="Mapiranje\PticeSeliceZivotinjeMapiranje.cs" />
+    <Compile Include="Mapiranje\RadnikMapiranja.cs" />
+    <Compile Include="Mapiranje\ZivotinjaMapiranja.cs" />
+    <Compile Include="OblastInformacije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OblastInformacije.Designer.cs">
+      <DependentUpon>OblastInformacije.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PocetnaStranaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PocetnaStranaForm.Designer.cs">
+      <DependentUpon>PocetnaStranaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\BiljkaForm1.resx">
+      <DependentUpon>BiljkaForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajHranilisteForm.resx">
+      <DependentUpon>DodajHranilisteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajLokalniNazivBiljkeForm.resx">
+      <DependentUpon>DodajLokalniNazivBiljkeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajOblastForm.resx">
+      <DependentUpon>DodajOblastForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajPrimecenuZivotinjuForm.resx">
+      <DependentUpon>DodajPrimecenuZivotinjuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajRadnikaForm.resx">
+      <DependentUpon>DodajRadnikaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajSeloForm.resx">
+      <DependentUpon>DodajSeloForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajZemljuForm1.resx">
+      <DependentUpon>DodajZemljuForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajZivotinjuForm.resx">
+      <DependentUpon>DodajZivotinjuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodavanjeBiljkeForm.resx">
+      <DependentUpon>DodavanjeBiljkeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\HranilistaForm.resx">
+      <DependentUpon>HranilistaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\IzmeniBiljkuForm.resx">
+      <DependentUpon>IzmeniBiljkuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\IzmeniDatumForm.resx">
+      <DependentUpon>IzmeniDatumForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\IzmeniHranilisteForm.resx">
+      <DependentUpon>IzmeniHranilisteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\IzmeniLokalniNazivBiljkeForm.resx">
+      <DependentUpon>IzmeniLokalniNazivBiljkeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\IzmeniOblastForm.resx">
+      <DependentUpon>IzmeniOblastForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\IzmeniRadnikaForm.resx">
+      <DependentUpon>IzmeniRadnikaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\IzmeniZivotinjuForm.resx">
+      <DependentUpon>IzmeniZivotinjuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\NaziviSelaForm.resx">
+      <DependentUpon>NaziviSelaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\OblastForm1.resx">
+      <DependentUpon>OblastForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\PrimecenaJeForm.resx">
+      <DependentUpon>PrimecenaJeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\RadniciOblastiForm.resx">
+      <DependentUpon>RadniciOblastiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\RadnikForm.resx">
+      <DependentUpon>RadnikForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\ZasticeneBiljkeForm.resx">
+      <DependentUpon>ZasticeneBiljkeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\ZatitiBiljkuForm.resx">
+      <DependentUpon>ZatitiBiljkuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\ZemljePticeSelice.resx">
+      <DependentUpon>ZemljePticeSelice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\ZivotinjeForm.resx">
+      <DependentUpon>ZivotinjeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OblastInformacije.resx">
+      <DependentUpon>OblastInformacije.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PocetnaStranaForm.resx">
+      <DependentUpon>PocetnaStranaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
